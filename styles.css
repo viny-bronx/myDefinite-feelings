@@ -10,6 +10,7 @@ body {
 h1 {
     color: #ff69b4;
     font-size: 2.5rem;
+    word-wrap: break-word;
 }
 
 p {
@@ -30,7 +31,7 @@ a:hover {
 /* Estilos para a página 1 */
 .page1 {
     background-color: #fce4ec;
-    min-height: 100vh; /* Garante que a altura mínima ocupe toda a tela */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +52,7 @@ a:hover {
     background-color: #fff0f5;
     min-height: 100vh;
     position: relative;
-    overflow: hidden; /* Impede a rolagem extra */
+    overflow: hidden;
 }
 
 #central-text {
@@ -61,11 +62,15 @@ a:hover {
     transform: translate(-50%, -50%);
     color: #ff1493;
     font-size: 2rem;
-    z-index: 10; /* Garante que o texto fique acima dos emojis */
+    z-index: 10;
+    padding: 20px;
+    width: 80%; /* Garante que o texto não ultrapasse as bordas da tela */
+    box-sizing: border-box;
 }
 
 #central-text h1 {
     font-size: 3rem;
+    word-wrap: break-word;
 }
 
 /* Estilos para emojis */
@@ -73,7 +78,7 @@ a:hover {
     font-size: 2rem;
     position: absolute;
     animation: fall 10s linear infinite;
-    z-index: -1; /* Coloca os emojis atrás do conteúdo */
+    z-index: -1;
 }
 
 @keyframes fall {
@@ -82,5 +87,42 @@ a:hover {
     }
     100% {
         transform: translateY(100vh);
+    }
+}
+
+/* Responsividade - Ajustes de texto em telas pequenas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Reduz o tamanho da fonte do título */
+    }
+
+    p {
+        font-size: 1rem; /* Ajusta o tamanho do parágrafo */
+    }
+
+    #central-text {
+        font-size: 1.5rem; /* Ajusta o texto central na segunda página */
+    }
+
+    #central-text h1 {
+        font-size: 2.5rem; /* Ajusta o título na segunda página */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Ajuste maior para telas menores */
+    }
+
+    p {
+        font-size: 0.9rem; /* Ajusta o parágrafo em telas pequenas */
+    }
+
+    #central-text {
+        font-size: 1.2rem; /* Ajusta ainda mais para telas pequenas */
+    }
+
+    #central-text h1 {
+        font-size: 2rem;
     }
 }
