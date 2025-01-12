@@ -1,0 +1,86 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden; /* Impede rolagem horizontal */
+}
+
+h1 {
+    color: #ff69b4;
+    font-size: 2.5rem;
+}
+
+p {
+    color: #ff1493;
+    font-size: 1.2rem;
+}
+
+a {
+    color: #ff1493;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para a página 1 */
+.page1 {
+    background-color: #fce4ec;
+    min-height: 100vh; /* Garante que a altura mínima ocupe toda a tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; /* Para garantir que os emojis fiquem atrás do conteúdo */
+    overflow: hidden; /* Impede a rolagem extra */
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 10; /* Garante que o conteúdo fique acima dos emojis */
+}
+
+/* Estilos para a página 2 */
+.page2 {
+    background-color: #fff0f5;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden; /* Impede a rolagem extra */
+}
+
+#central-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff1493;
+    font-size: 2rem;
+    z-index: 10; /* Garante que o texto fique acima dos emojis */
+}
+
+#central-text h1 {
+    font-size: 3rem;
+}
+
+/* Estilos para emojis */
+.emoji {
+    font-size: 2rem;
+    position: absolute;
+    animation: fall 10s linear infinite;
+    z-index: -1; /* Coloca os emojis atrás do conteúdo */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
